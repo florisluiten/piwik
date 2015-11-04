@@ -268,6 +268,7 @@
         "OperationEndsWith": "Ends with",
         "OptionalSmtpPort": "Optional. Defaults to 25 for unencrypted and TLS SMTP, and 465 for SSL SMTP.",
         "Options": "Options",
+        "Or": "or",
         "OrCancel": "or %s Cancel %s",
         "Others": "Others",
         "Outlink": "Outlink",
