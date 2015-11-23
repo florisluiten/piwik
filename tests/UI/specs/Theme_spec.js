@@ -30,15 +30,16 @@ describe("Theme", function () {
         clearAssets();
     });
 
+    it("should theme the UI demo page", function (done) {
+        expect.screenshot("demo").to.be.capture(function (page) {
+            page.load("?module=Morpheus&action=demo");
+        }, done);
+    });
+
     it("should use the current theme", function (done) {
         expect.screenshot("home").to.be.capture(function (page) {
             page.load("?module=CoreHome&action=index&idSite=1&period=year&date=2012-08-09");
         }, done);
     });
 
-    it("should theme the UI demo page", function (done) {
-        expect.screenshot("demo").to.be.capture(function (page) {
-            page.load("?module=Morpheus&action=demo");
-        }, done);
-    });
 });
