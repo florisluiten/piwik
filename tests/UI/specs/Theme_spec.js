@@ -19,10 +19,6 @@ describe("Theme", function () {
     before(function () {
         testEnvironment.pluginsToLoad = ['ExampleTheme'];
 
-        // Enable development mode to be able to see the UI demo page
-        testEnvironment.overrideConfig('Development', 'enabled', true);
-        testEnvironment.save();
-
         clearAssets();
     });
 
@@ -30,15 +26,19 @@ describe("Theme", function () {
         clearAssets();
     });
 
-    it("should theme the UI demo page", function (done) {
-        expect.screenshot("demo").to.be.capture(function (page) {
-            page.load("?module=Morpheus&action=demo");
-        }, done);
-    });
-
     it("should use the current theme", function (done) {
         expect.screenshot("home").to.be.capture(function (page) {
             page.load("?module=CoreHome&action=index&idSite=1&period=year&date=2012-08-09");
+        }, done);
+    });
+
+    it("should theme the UI demo page", function (done) {
+        expect.screenshot("demo").to.be.capture(function (page) {
+            // Enable development mode to be able to see the UI demo page
+            testEnvironment.overrideConfig('Development', 'enabled', true);
+            testEnvironment.save();
+
+            page.load("?module=Morpheus&action=demo");
         }, done);
     });
 
