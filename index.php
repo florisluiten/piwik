@@ -21,7 +21,7 @@ if (!defined('PIWIK_INCLUDE_PATH')) {
 require_once PIWIK_INCLUDE_PATH . '/core/bootstrap.php';
 
 if (!defined('PIWIK_PRINT_ERROR_BACKTRACE')) {
-    define('PIWIK_PRINT_ERROR_BACKTRACE', false);
+    define('PIWIK_PRINT_ERROR_BACKTRACE', true);
 }
 
 require_once PIWIK_INCLUDE_PATH . '/core/dispatch.php';
