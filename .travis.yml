@@ -40,8 +40,8 @@ env:
     - TEST_SUITE=JavascriptTests MYSQL_ADAPTER=PDO_MYSQL
     - TEST_SUITE=AngularJSTests MYSQL_ADAPTER=PDO_MYSQL SKIP_COMPOSER_INSTALL=1
     # All tests after another
-    - TEST_SUITE=AllTests MYSQL_ADAPTER=PDO_MYSQL
-    - TEST_SUITE=AllTests MYSQL_ADAPTER=MYSQLI
+    - TEST_SUITE=IntegrationTests MYSQL_ADAPTER=MYSQLI
+    - TEST_SUITE=SystemTests MYSQL_ADAPTER=MYSQLI
     - TEST_SUITE=UITests MYSQL_ADAPTER=PDO_MYSQL UITEST_EXTRA_OPTIONS="--run-first-half-only"
     - TEST_SUITE=UITests MYSQL_ADAPTER=PDO_MYSQL UITEST_EXTRA_OPTIONS="--run-second-half-only"
   global:
@@ -83,11 +83,11 @@ matrix:
     - php: 5.6
       env: TEST_SUITE=AllTests MYSQL_ADAPTER=PDO_MYSQL
     - php: 5.3.3
-      env: TEST_SUITE=AllTests MYSQL_ADAPTER=MYSQLI
+      env: TEST_SUITE=SystemTests MYSQL_ADAPTER=MYSQLI
     - php: 7
-      env: TEST_SUITE=AllTests MYSQL_ADAPTER=MYSQLI
+      env: TEST_SUITE=SystemTests MYSQL_ADAPTER=MYSQLI
     - php: hhvm
-      env: TEST_SUITE=AllTests MYSQL_ADAPTER=MYSQLI
+      env: TEST_SUITE=SystemTests MYSQL_ADAPTER=MYSQLI
     # Javascript tests need to run only on one PHP version
     - php: 5.3.3
       env: TEST_SUITE=JavascriptTests MYSQL_ADAPTER=PDO_MYSQL
