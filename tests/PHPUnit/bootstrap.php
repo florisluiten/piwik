@@ -10,7 +10,7 @@ use Piwik\Tests\Framework\TestingEnvironmentManipulator;
 use Piwik\Tests\Framework\TestingEnvironmentVariables;
 
 define('PIWIK_TEST_MODE', true);
-define('PIWIK_PRINT_ERROR_BACKTRACE', false);
+define('PIWIK_PRINT_ERROR_BACKTRACE', true);
 
 if (!defined("PIWIK_PATH_TEST_TO_ROOT")) {
     define('PIWIK_PATH_TEST_TO_ROOT', realpath(dirname(__FILE__) . '/../..'));
